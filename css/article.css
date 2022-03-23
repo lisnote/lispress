@@ -1,0 +1,33 @@
+#article * {
+  margin-bottom: 10px;
+}
+
+#article p, li {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+#article blockquote {
+  border-left: 5px solid #DDD;
+  padding-left: 5px;
+}
+
+#article table>*>*>* {
+  border: 3px solid #DDD;
+  padding: 3px;
+}
+
+#article table {
+  word-break: break-word;
+  overflow: hidden;
+}
+
+#article img {
+  max-width: 100%;
+}
+
+#chapters {
+  top: 65px;
+  bottom: 0;
+  overflow-y: auto;
+}

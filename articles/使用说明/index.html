@@ -1,0 +1,125 @@
+<html>
+
+<head>
+	<!-- date: 1970-01-01 00:00:00 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>README_CN.md</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/twbs/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/default.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" type="text/css" href="../../css/default.css">
+    <link rel="stylesheet" type="text/css" href="../../css/article.css">
+
+    <!-- JavaScript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/markedjs/marked@4.0.12/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+</head>
+
+<body class="vh-100 d-flex flex-column">
+
+    <!-- Navigation -->
+    <nav class="sticky z-1050" style="max-height: 64px; min-height: 64px;">
+        <div class="bg-white w-100">
+            <div class="col-12 col-xl-8 d-flex border-bottom m-auto navbar">
+                <div class="mx-auto my-1 mx-sm-1">
+                    <form action="../" class="input-group">
+                        <input name="search" placeholder="Search anything" class="form-control">
+                    </form>
+                </div>
+                <div class="mx-auto my-1 mx-sm-1 d-flex align-items-center">
+                    <a href="../" class="me-1 fs-3 text-decoration-none text-secondary">
+                        LisPress
+                    </a>
+                    <button class="btn btn-outline-secondary d-block d-lg-none me-1 navbar-light show-toggle"
+                        data-show-toggle="#sidebar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="flex-fill">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex col-12 col-xl-8" data-toggle="#nav-toggle">
+                <div class="mw-100 flex-fill p-4 mw-0">
+                    <div id="article" class="border-bottom">
+                        <p><a href="../../README.md">English</a></p>
+                        <p><a href="https://lisnote.github.io">演示</a></p>
+                        <p>部署简单的网站,用来记记笔记</p>
+                        <h1 id="关于lispress">关于lispress</h1>
+                        <p>将部署博客简单化</p>
+                        <ol>
+                            <li>不需要配置action</li>
+                            <li>不需要管理服务器</li>
+                            <li>不需要写个笔记还得到网站进行编辑</li>
+                        </ol>
+                        <h1 id="部署">部署</h1>
+                        <ol>
+                            <li>
+                                <p>fork本仓库</p>
+                            </li>
+                            <li>
+                                <p>命名仓库名为 <strong>你的用户名.github.io</strong></p>
+                            </li>
+                            <li>
+                                <p>部署自动开始,稍后即可访问 <strong>你的用户名.github.io</strong></p>
+                            </li>
+                        </ol>
+                        <h1 id="基本用法">基本用法</h1>
+                        <ul>
+                            <li>写好的markdown放到articles文件夹下就可以自动发布</li>
+                            <li>在articles/assets/下的目录名如果存在对应的文章,该目录下的background.jpg文件将会成为该文章的标题图片</li>
+                            <li>在config.js配置token可提高github api使用次数(每小时5000),还可以开启gitalk留言</li>
+                            <li>articles文件夹下的markdown文件会被解析,而非markdown文件则会被直接索引,这意味着你可以建一个文件夹放一些单独的页面</li>
+                        </ul>
+                    </div>
+
+                    <!-- Comments -->
+                    <div id="comments" class="border-bottom"></div>
+
+                    <!-- Footer -->
+                    <footer class="footer col-12 col-xl-8 m-auto p-2 text-center bg-white">
+                        <div>
+                            <a href="https://github.com/lisnote/lispress/" class="text-decoration-none">LisPress</a>
+                            <a>powered by</a>
+                            <a href="https://github.com/lisnote" class="text-decoration-none">lisnote</a>
+                        </div>
+                    </footer>
+                </div>
+                <div id="sidebar" class="width-300 position-absolute end-0 top-0 position-lg-static d-none d-lg-block">
+                    <div id="chapters"
+                        class="width-300 position-fixed show-toggle bg-white border-start z-1050 z-lg p-4"
+                        data-show-toggle="#sidebar">
+
+                        <!-- Chapter -->
+
+                        <a href="#关于lispress" class="text-decoration-none text-black">关于lispress</a><a><br></a><a
+                            href="#部署" class="text-decoration-none text-black">部署</a><a><br></a><a href="#基本用法"
+                            class="text-decoration-none text-black">基本用法</a><a><br></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Back To Top -->
+    <button class="back-to-top rounded-3 bg-opacity-75 z-1050"></button>
+
+    <!-- JavaScript Action -->
+    <script src="https://cdn.jsdelivr.net/gh/twbs/bootstrap@5.1.3/dist/js/bootstrap.min.js" type="text/javascript"
+        charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"
+        type="text/javascript" charset="utf-8"></script>
+    <script src="../js/default.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

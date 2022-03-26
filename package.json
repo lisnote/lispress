@@ -4,7 +4,7 @@
   "description": "get gitblog static resources url",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon test"
+    "test": "nodemon --experimental-fetch test"
   },
   "repository": {
     "type": "git",

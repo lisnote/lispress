@@ -1,0 +1,27 @@
+{
+  "name": "lispress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nodemon test",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisnote/lispress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lisnote/lispress/issues"
+  },
+  "homepage": "https://github.com/lisnote/lispress#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

@@ -16,8 +16,8 @@ app.get('*', (req, res) => {
 });
 
 const httpsOption = {
-  key: fs.readFileSync('CA/ali.lisnote.com.key'),
-  cert: fs.readFileSync('CA/ali.lisnote.com.pem'),
+  key: fs.readFileSync('CA/lisnote.com.key'),
+  cert: fs.readFileSync('CA/lisnote.com.pem'),
 };
 app.listen(80);
 https.createServer(httpsOption, app).listen(443);

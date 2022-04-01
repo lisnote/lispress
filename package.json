@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "nodemon test",
-    "start": "nodemon index.js"
+    "start": "nodemon lib"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/lisnote/lispress#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "moment": "^2.29.1"
   }
 }

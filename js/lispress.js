@@ -88,6 +88,9 @@ function githubImpl() {
         });
       })
       .then((filter) => {
+        filter.sort((x, y) => {
+          return dateMap[y] - dateMap[x];
+        });
         return filter;
       });
 

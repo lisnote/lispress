@@ -1,1 +1,6 @@
-./vscode
+.vscode
+/CA
+/logs
+/node_modules
+/test
+/dist

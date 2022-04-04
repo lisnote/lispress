@@ -22,7 +22,7 @@ function githubImpl() {
   lispress.getSearchArticles = getSearchArticles;
   lispress.getArticle = (article) =>
     githubConfig.article.replace(/{article}/g, article);
-  lispress.getBackground = (article) =>
+  lispress.getBackgroundUrl = (article) =>
     githubConfig.background.replace(/{article}/g, article);
   // 将占位id的内容替换为有效值
   $(() => {

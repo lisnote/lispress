@@ -20,6 +20,6 @@ var lispress = {
   getArticle: null,
   // param string类型文章/文件夹名
   // return string类型的background直链
-  getBackground: null,
+  getBackgroundUrl: null,
 };
 lispress.impl();

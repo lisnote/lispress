@@ -25,7 +25,7 @@
       } else {
         href = article;
       }
-      background = lispress.getBackground(article);
+      background = lispress.getBackgroundUrl(article);
       let vm = `<a href="articles/${href}">
 				<div class="ratio ratio-16x9 rounded-3 mb-4 img-fluid bg-size-cover" style="background-image: url(${background});background-color: #DDD;">
 					<div>

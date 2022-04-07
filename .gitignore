@@ -3,4 +3,4 @@
 /logs
 /node_modules
 /test
-/dist
+/yarn.lock

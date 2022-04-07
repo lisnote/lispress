@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="avatar">
+    <div id="username"></div>
+    <a id="githubUrl">githubUrl</a>
+    <script src="../dist/lispress.js"></script>
+    <script>
+        lispress.config({
+            // username: '',
+            // clientID: '',
+            // clientSecret: '',
+            // articles: '',
+            // article: '',
+            // background: '',
+            // avatar: '',
+        })
+        lispress.setAvatar("#avatar");
+        lispress.setUsername("#username");
+        lispress.setGithubUrl("#githubUrl")
+        lispress.getArticleContent("Vue3.md").then(article => console.log(article.substring(0, 100)))
+        // The next two lines must comment one of both
+        // lispress.getArticlesTitle().then(arr => console.log(arr))
+        lispress.getSearchArticlesTitle(["Java", "test"]).then(arr => console.log(arr))
+    </script>
+</body>
+
+</html>

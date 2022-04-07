@@ -1,11 +1,25 @@
-For now it's just a string concatenation tool
+The core of [lispress](https://github.com/lisnote/lispress)
 
 # Example
 
-```javascript
-const lispress require("lispress");
-lispress.config({username:"lisnote"});
-let url lispress.getStaticUrl("test.md");
-console.log(url);
-// output : https://lisnote.github.io/test.md
+```html
+<script src="https://cdn.jsdelivr.net/npm/lispress/dist/lispress.min.js"></script>
+<script>
+    lispress.config({
+        // username: '',
+        // clientID: '',
+        // clientSecret: '',
+        // articles: '',
+        // article: '',
+        // background: '',
+        // avatar: '',
+    })
+    lispress.setAvatar("#avatar");
+    lispress.setUsername("#username");
+    lispress.setGithubUrl("#githubUrl")
+    lispress.getArticleContent("Vue3.md").then(article => console.log(article.substring(0, 100)))
+    // The next two lines must comment one of both
+    // lispress.getArticlesTitle().then(arr => console.log(arr))
+    lispress.getSearchArticlesTitle(["Java", "test"]).then(arr => console.log(arr))
+</script>
 ```

@@ -1,17 +1,20 @@
 <script setup lang="ts"></script>
 
 <template>
-  <nav>asdf</nav>
-  <div></div>
-  <footer></footer>
+  <nav>nav</nav>
+  <div>content</div>
+  <footer>footer</footer>
 </template>
 
-<style>
+<style lang="scss">
 body {
   margin: 0;
 }
-#app{
+#app {
   background: red;
   min-height: 100vh;
+  nav {
+    background: gray;
+  }
 }
 </style>

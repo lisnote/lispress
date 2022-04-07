@@ -311,7 +311,7 @@ var getSearchArticlesTitle_1 = __webpack_require__(806);
 var setAvatar_1 = __webpack_require__(355);
 var setGithubUrl_1 = __webpack_require__(119);
 var setUsername_1 = __webpack_require__(713);
-var lispress = {
+window.lispress = {
     config: config_1.default,
     getArticleContent: getArticleContent_1.default,
     getArticlesTitle: getArticlesTitle_1.default,

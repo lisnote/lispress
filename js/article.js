@@ -2,8 +2,7 @@
   // 插入文章到#article
   let article = getSearchParameter("article")
   $("title").html(article);
-  fetch(lispress.getArticle(article))
-    .then((res) => res.text())
+  lispress.getArticleContent(article)
     .then((text) => {
       if (text.indexOf("---") == 0) {
         text = text.replace(/---(.*\r?\n)*?---/, "");

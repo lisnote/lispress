@@ -2,11 +2,13 @@
   let search = getSearchParameter('search');
   if (search == '') {
     // 根据原始articles进行插入
-    lispress.getArticles().then((articles) => insertArticles(articles));
+    lispress.getArticlesTitle().then((articles) => insertArticles(articles));
   } else {
     // 根据查找到的文章进行插入
     let keywords = search.split(' ');
-    lispress.getSearchArticles(keywords).then((articles) => insertArticles(articles))
+    lispress
+      .getSearchArticlesTitle(keywords)
+      .then((articles) => insertArticles(articles));
   }
 
   // 插入文章

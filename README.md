@@ -1,39 +1,16 @@
-[简体中文](assets/other/README_CN.md)
+# Vue 3 + Typescript + Vite
 
-[DEMO](https://lisnote.github.io)
+This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-Record your learning in lispress.
+## Recommended IDE Setup
 
-# Description
+- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
-I'm try to make blog deployment as simple as possible, such as:
+## Type Support For `.vue` Imports in TS
 
-1. Not required to configure action
-2. Not required to manage the server
-3. Not required to write a note also have to go to the website
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
 
-# Deploy
+1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-1. Fork the repository
-
-2. Renamed the repository that your fork as **YourUsername.github.io**
-
-3. Wait a minute, deploy has started, and then visit **YourUsername.github.io**
-
-# Usage
-
-* Publish article
-  
-  Place your markdown files in the `articles` folder,deploy will autostart
-* Add article cover
-  
-  For example, the `articles/assets/MarkdownTest.md/background.jpg` will be the cover image for `articles/MarkdownTest.md`
-* Use auth
-  
-  Authorizing Oauth Apps in config. js to improve accessibility and activate gitalk comments system
-* Custom domain
-  
-  The `githubConfig.username` option in `config.js` must be set before custom domain
-* Independent pages
-  
-  Not only markdown will be indexed, but all files in articles except `assets` and `index.html` will be. The repository itself is an example, you should take a look at `articles` directory
+You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).

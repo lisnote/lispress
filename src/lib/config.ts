@@ -12,6 +12,16 @@ export default function (obj: Config = {}): Config {
   return config;
 }
 
+declare interface Config {
+  username?: string;
+  clientID?: string;
+  clientSecret?: string;
+  articles?: string;
+  article?: string;
+  background?: string;
+  avatar?: string;
+}
+
 // data container
 let config: Config = {};
 

@@ -1,5 +1,9 @@
 import config from './config';
-
+declare global{
+  interface DateMap {
+    [key: string]: number;
+  }
+}
 function getArticles(): Promise<Array<string>> {
   return fetch(config().articles, {
     headers: {

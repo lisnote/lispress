@@ -7,7 +7,7 @@ import setAvatar from './lib/setAvatar';
 import setGithubUrl from './lib/setGithubUrl';
 import setUsername from './lib/setUsername';
 
-window.lispress = {
+export default {
   config,
   getArticleContent,
   getArticlesTitle,

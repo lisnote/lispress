@@ -1,9 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import NavBar from "./components/NavBar.vue";
+import MainContent from "./components/MainContent.vue";
+</script>
 
 <template>
-  <nav>nav</nav>
-  <div>content</div>
-  <footer>footer</footer>
+  <nav>
+    <div><nav-bar /></div>
+  </nav>
+  <div>
+    <div><main-content /></div>
+  </div>
 </template>
 
 <style lang="scss">
@@ -11,10 +17,29 @@ body {
   margin: 0;
 }
 #app {
-  background: red;
   min-height: 100vh;
-  nav {
-    background: gray;
+  display: flex;
+  flex-direction: column;
+  > nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    background: white;
+    > div {
+      width: 1200px;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    > div {
+      width: 1200px;
+      height: 10000px;
+    }
   }
 }
 </style>

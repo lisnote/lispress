@@ -19,10 +19,10 @@ nextTick(function () {
 
 <template>
   <div id="main-content">
-    <div>
+    <div id="exhibition-area">
       <router-view name="exhibitionArea"></router-view>
     </div>
-    <div>
+    <div id="sidebar">
       <div>
         <router-view name="sidebar"></router-view>
       </div>
@@ -34,30 +34,28 @@ nextTick(function () {
 #main-content {
   display: flex;
   height: 100%;
-  > div {
-    &:nth-child(1) {
-      flex: 1;
-      min-width: 0;
+  #exhibition-area {
+    flex: 1;
+    min-width: 0;
+  }
+  #sidebar {
+    border-left: 1px solid #ddd;
+    width: 300px;
+    background: white;
+    @media screen and (max-width: 800px) {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 0;
+      bottom: 0px;
+      cursor: pointer;
     }
-    &:nth-child(2) {
-      border-left: 1px solid #ddd;
+    div {
+      overflow-y: auto;
+      position: fixed;
       width: 300px;
-      background: white;
-      @media screen and (max-width: 800px) {
-        display: none;
-        position: fixed;
-        top: 60px;
-        right: 0;
-        bottom: 0px;
-        cursor: pointer;
-      }
-      div {
-        overflow-y: auto;
-        position: fixed;
-        width: 300px;
-        top: 60px;
-        bottom: 0;
-      }
+      top: 60px;
+      bottom: 0;
     }
   }
 }

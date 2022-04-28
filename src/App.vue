@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import NavBar from "./components/Navbar.vue";
+import Navbar from "./components/Navbar.vue";
 import MainContent from "./components/MainContent.vue";
+import BackToTop from "./components/BackToTop.vue";
 </script>
 
 <template>
   <nav>
-    <div><nav-bar /></div>
+    <div><navbar /></div>
   </nav>
   <div>
     <div><main-content /></div>
   </div>
+  <back-to-top />
 </template>
 
 <style lang="scss">

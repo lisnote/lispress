@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ExhibitionArea from "./ExhibitionArea.vue";
-import SideBar from "./Sidebar.vue";
 import { nextTick } from "@vue/runtime-core";
 
 // 侧边栏状态切换
@@ -22,15 +20,17 @@ nextTick(function () {
 <template>
   <div id="main-content">
     <div>
-      <exhibition-area />
+      <router-view name="exhibitionArea"></router-view>
     </div>
     <div>
-      <div>SideBar</div>
+      <div>
+        <router-view name="sidebar"></router-view>
+      </div>
     </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #main-content {
   display: flex;
   height: 100%;

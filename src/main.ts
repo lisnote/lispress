@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import lispress from 'lispress';
+import router from './router';
 
 lispress.config({
   username: 'lisnote',
@@ -8,4 +9,4 @@ lispress.config({
   clientSecret: '715c4a9cfe522069f914ff3f839119e6c4ae73a8',
 });
 
-createApp(App).mount('#app');
+createApp(App).use(router).mount('#app');

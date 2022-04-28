@@ -1,17 +1,6 @@
-<script setup lang="ts">
-import { nextTick } from "@vue/runtime-core";
-
-nextTick(() => {
-  let logo = document.querySelector("#logo");
-  logo?.addEventListener("click", () => {
-    location.href = "/";
-  });
-});
-</script>
-
 <template>
   <div id="nav-bar">
-    <div id="logo">Lispress</div>
+    <router-link to="/" id="logo"><div>Lispress</div></router-link>
     <div>
       <form method="get" action="/">
         <input type="text" placeholder="Search anything" name="search" />
@@ -35,7 +24,7 @@ nextTick(() => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #nav-bar {
   display: flex;
   justify-content: space-between;
@@ -60,12 +49,15 @@ nextTick(() => {
 }
 #logo {
   font-size: 25px;
+  text-decoration: none;
+  color: black;
 }
 #sidebar-toggle {
   margin: 2px 0 2px 5px;
   min-width: 30px;
   width: 30px;
   height: 30px;
+  cursor: pointer;
   @media screen and (min-width: 800px) {
     display: none;
   }

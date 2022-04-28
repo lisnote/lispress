@@ -37,6 +37,7 @@ nextTick(function () {
   > div {
     &:nth-child(1) {
       flex: 1;
+      min-width: 0;
     }
     &:nth-child(2) {
       border-left: 1px solid #ddd;

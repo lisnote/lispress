@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import lispress from "lispress";
 import { reactive, nextTick } from "vue";
-import { useRouter } from "vue-router";
 
 // 读取数据
 let data: { titles: Array<string> } = reactive({ titles: [] });

@@ -37,6 +37,7 @@ body {
   }
   > div {
     flex: 1;
+    min-width: 0;
     display: flex;
     justify-content: center;
     > div {

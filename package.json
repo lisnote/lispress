@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "lispress": "^1.1.2",
+    "marked": "^4.0.14",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
   },

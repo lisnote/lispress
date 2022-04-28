@@ -8,4 +8,5 @@ export default defineConfig({
     port: 80,
     open: true,
   },
+  base: './',
 });

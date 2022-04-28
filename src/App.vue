@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavBar from "./components/NavBar.vue";
+import NavBar from "./components/Navbar.vue";
 import MainContent from "./components/MainContent.vue";
 </script>
 
@@ -13,6 +13,7 @@ import MainContent from "./components/MainContent.vue";
 </template>
 
 <style lang="scss">
+// 结构样式
 body {
   margin: 0;
 }
@@ -41,5 +42,10 @@ body {
       height: 10000px;
     }
   }
+}
+
+// 公共样式
+.show {
+  display: block !important;
 }
 </style>

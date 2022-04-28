@@ -41,7 +41,6 @@ body {
     justify-content: center;
     > div {
       width: 1200px;
-      height: 10000px;
     }
   }
 }

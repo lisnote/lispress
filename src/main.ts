@@ -9,4 +9,6 @@ lispress.config({
   clientSecret: '715c4a9cfe522069f914ff3f839119e6c4ae73a8',
 });
 
-createApp(App).use(router).mount('#app');
+let app = createApp(App);
+app.use(router);
+app.mount('#app');

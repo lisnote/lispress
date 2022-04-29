@@ -49,8 +49,10 @@ nextTick(function () {
       bottom: 0px;
       cursor: pointer;
     }
-    div {
+    >div{
       border-left: 1px solid #ddd;
+    }
+    div {
       overflow-y: auto;
       position: fixed;
       width: 300px;

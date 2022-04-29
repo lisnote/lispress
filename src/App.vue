@@ -24,16 +24,17 @@ body {
   display: flex;
   flex-direction: column;
   > nav {
-    position: sticky;
+    position: relative;
     z-index: 1000;
-    top: 0;
     display: flex;
     height: 60px;
     justify-content: center;
-    background: white;
     > div {
+      position: fixed;
       width: 1200px;
+      height: 60px;
       border-bottom: 1px solid #ddd;
+      background: white;
     }
   }
   > div {

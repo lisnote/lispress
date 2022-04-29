@@ -23,7 +23,6 @@ lispress.getArticleContent("markdown基础语法与测试.md").then((text) => {
 <style lang="scss">
 #article-content {
   position: relative;
-  z-index: -1;
   #article {
     position: absolute;
     top: 0;

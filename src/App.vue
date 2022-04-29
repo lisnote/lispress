@@ -25,6 +25,7 @@ body {
   flex-direction: column;
   > nav {
     position: sticky;
+    z-index: 1000;
     top: 0;
     display: flex;
     height: 60px;

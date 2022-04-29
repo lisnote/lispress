@@ -35,7 +35,7 @@ lispress.getArticlesTitle().then((titles) => {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  z-index: -1;
+  // z-index: -1;
   background-size: cover;
   &::after {
     display: block;

@@ -1,15 +1,24 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRoute } from "vue-router";
 import lispress from "lispress";
 import { marked } from "marked";
+import hljs from "highlight.js";
 
 let article = ref();
-lispress.getArticleContent("markdown基础语法与测试.md").then((text) => {
+const route = useRoute();
+lispress.getArticleContent(route.query.article).then((text) => {
   if (text.indexOf("---") == 0) {
     text = text.replace(/---(.*\r?\n)*?---/, "");
   }
   text = marked(text);
-  console.log(text);
+
+  let element = document.createElement("div");
+  element.innerHTML = text;
+  console.log(element)
+  let temp = element.querySelectorAll("div");
+  console.log(temp)
+
   article.value = text;
 });
 </script>

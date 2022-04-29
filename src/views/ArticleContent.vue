@@ -7,14 +7,14 @@ import hljs from "highlight.js";
 
 let article = ref();
 const route = useRoute();
-lispress.getArticleContent(route.query.article).then((text) => {
+lispress.getArticleContent(route.query.article as string).then((text) => {
   if (text.indexOf("---") == 0) {
     text = text.replace(/---(.*\r?\n)*?---/, "");
   }
   let element = document.createElement("div");
   element.innerHTML = marked(text);
-  element.querySelectorAll("pre>code").forEach((el) => {
-    hljs.highlightElement(el);
+  element.querySelectorAll("pre>code").forEach(el  => {
+    hljs.highlightElement(el as HTMLElement);
   });
   article.value = element.innerHTML;
 });

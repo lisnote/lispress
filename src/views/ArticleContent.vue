@@ -30,7 +30,7 @@ lispress.getArticleContent("markdown基础语法与测试.md").then((text) => {
     right: 0;
     bottom: 0;
     left: 0;
-    background: red;
+    padding: 15px;
     pre {
       overflow-x: auto;
     }

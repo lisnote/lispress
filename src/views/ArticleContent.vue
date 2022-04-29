@@ -11,15 +11,12 @@ lispress.getArticleContent(route.query.article).then((text) => {
   if (text.indexOf("---") == 0) {
     text = text.replace(/---(.*\r?\n)*?---/, "");
   }
-  text = marked(text);
-
   let element = document.createElement("div");
-  element.innerHTML = text;
-  console.log(element)
-  let temp = element.querySelectorAll("div");
-  console.log(temp)
-
-  article.value = text;
+  element.innerHTML = marked(text);
+  element.querySelectorAll("pre>code").forEach((el) => {
+    hljs.highlightElement(el);
+  });
+  article.value = element.innerHTML;
 });
 </script>
 
@@ -30,6 +27,7 @@ lispress.getArticleContent(route.query.article).then((text) => {
 </template>
 
 <style lang="scss">
+@import url(https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css);
 #article-content {
   position: relative;
   #article {

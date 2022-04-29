@@ -39,7 +39,6 @@ nextTick(function () {
     min-width: 0;
   }
   #sidebar {
-    border-left: 1px solid #ddd;
     width: 300px;
     background: white;
     @media screen and (max-width: 800px) {
@@ -51,6 +50,7 @@ nextTick(function () {
       cursor: pointer;
     }
     div {
+      border-left: 1px solid #ddd;
       overflow-y: auto;
       position: fixed;
       width: 300px;

@@ -10,40 +10,50 @@ lispress.getArticleContent("markdown基础语法与测试.md").then((text) => {
   }
   text = marked(text);
   console.log(text);
-  // article.value = text;
+  article.value = text;
 });
 </script>
 
 <template>
   <div id="article-content">
-    <div id="all">
-      <div id="main">
-          <pre>asdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasdasdfasdfasdfasd</pre
-          >
-      </div>
-      <div id="sidebar">侧边栏</div>
-    </div>
+    <div id="article" v-html="article"></div>
   </div>
-  <!-- <div id="article-content" v-html="article"></div> -->
 </template>
 
 <style lang="scss">
 #article-content {
-  #all {
-    display: flex;
-  }
-  #main {
-    flex: 1;
-    min-width: 0;
-    background-color: red;
-  }
-  #main > pre {
-    max-width: 100%;
-    overflow: auto;
-  }
-  #sidebar {
-    /* background-color: black; */
-    width: 500px;
+  position: relative;
+  z-index: -1;
+  #article {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: red;
+    pre {
+      overflow-x: auto;
+    }
+    p,
+    li {
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+    blockquote {
+      border-left: 5px solid #ddd;
+      padding-left: 5px;
+    }
+    table {
+      word-break: break-word;
+      overflow: auto;
+      background: #ddd;
+      * {
+        background: white;
+      }
+    }
+    img {
+      max-width: 100%;
+    }
   }
 }
 </style>

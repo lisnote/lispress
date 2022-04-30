@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import Navbar from "./components/Navbar.vue";
-import MainContent from "./components/MainContent.vue";
-import BackToTop from "./components/BackToTop.vue";
+import Navbar from './components/Navbar.vue';
+import MainContent from './components/MainContent.vue';
+import BackToTop from './components/BackToTop.vue';
 </script>
 
 <template>
   <nav>
-    <div><navbar /></div>
+    <div>
+      <div><navbar /></div>
+    </div>
   </nav>
   <div>
     <div><main-content /></div>
@@ -24,17 +26,20 @@ body {
   display: flex;
   flex-direction: column;
   > nav {
-    position: relative;
-    z-index: 1000;
-    display: flex;
     height: 60px;
-    justify-content: center;
     > div {
       position: fixed;
-      width: 1200px;
+      z-index: 1000;
+      width: 100%;
       height: 60px;
-      border-bottom: 1px solid #ddd;
-      background: white;
+      display: flex;
+      justify-content: center;
+      > div {
+        width: 1200px;
+        height: 60px;
+        background: white;
+        border-bottom: 1px solid #ddd;
+      }
     }
   }
   > div {

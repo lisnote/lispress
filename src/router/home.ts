@@ -1,5 +1,11 @@
-import ArticleList from '../views/ArticleList.vue';
-import UserInformation from '../views/UserInformation.vue';
+import { defineAsyncComponent } from 'vue';
+
+const ArticleList = defineAsyncComponent(
+  () => import('../views/ArticleList.vue')
+);
+const UserInformation = defineAsyncComponent(
+  () => import('../views/UserInformation.vue')
+);
 
 const route = {
   path: '/',

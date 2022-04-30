@@ -1,5 +1,5 @@
-const ArticleList = () => import('../views/ArticleList.vue')
-const UserInformation = () => import('../views/UserInformation.vue')
+const ArticleList = () => import('@/views/ArticleList.vue')
+const UserInformation = () => import('@/views/UserInformation.vue')
 
 const route = {
   path: '/',

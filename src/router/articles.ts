@@ -1,11 +1,5 @@
-import { defineAsyncComponent } from 'vue';
-
-const ArticleContent = defineAsyncComponent(
-  () => import('../views/ArticleContent.vue')
-);
-const ChaptersIndex = defineAsyncComponent(
-  () => import('../views/ChaptersIndex.vue')
-);
+const ArticleContent = () => import('../views/ArticleContent.vue')
+const ChaptersIndex = () => import('../views/ChaptersIndex.vue')
 
 const articles = {
   path: '/articles',

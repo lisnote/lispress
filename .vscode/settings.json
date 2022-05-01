@@ -1,4 +1,6 @@
 {
     "prettier.singleQuote": true,
     "prettier.trailingComma": "all",
+    "liveServer.settings.port": 8080,
+    "liveServer.settings.root": "./dist"
 }

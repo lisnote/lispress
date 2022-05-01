@@ -20,10 +20,11 @@ nextTick(() => {
     <div
       v-for="chapter in chapters"
       :key="chapter.id"
-      :data-id="`#${chapter.id}`"
       :style="{ '--level': chapter.tagName.substring(1) * 10 + '' }"
     >
-      {{ chapter.innerText }}
+      <span :data-id="`#${chapter.id}`">
+        {{ chapter.innerText }}
+      </span>
     </div>
   </div>
 </template>
@@ -33,6 +34,9 @@ nextTick(() => {
   padding: 15px;
   > div {
     border-left: calc(var(--level) * 1px) solid white;
+    > span {
+      cursor: pointer;
+    }
   }
 }
 </style>

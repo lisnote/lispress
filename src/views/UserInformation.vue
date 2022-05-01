@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import lispress from "lispress";
+import lispress from 'lispress';
 let avatar = lispress.config().avatar;
 let username = lispress.config().username;
-let github = "https://github.com/" + username;
+let github = 'https://github.com/' + username;
 </script>
 
 <template>
@@ -20,7 +20,14 @@ let github = "https://github.com/" + username;
   display: flex;
   align-items: center;
   justify-content: center;
-  > div > * {
+
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  width: 300px;
+  > div > p {
     text-align: center;
     > img {
       width: 100px;

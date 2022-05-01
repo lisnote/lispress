@@ -26,7 +26,7 @@ lispress.getArticleContent(title).then((text) => {
 </template>
 
 <style lang="scss">
-@import url(https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css);
+@import "highlight.js/styles/default.css";
 #article-content {
   position: relative;
   #article {

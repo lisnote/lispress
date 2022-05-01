@@ -1,28 +1,27 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRoute } from "vue-router";
-import lispress from "lispress";
-import { marked } from "marked";
-import hljs from "highlight.js/lib/common";
+import { useRoute } from 'vue-router';
+import lispress from 'lispress';
+import { marked } from 'marked';
+import hljs from 'highlight.js/lib/common';
+import store from '../store';
 
-let article = ref();
-const route = useRoute();
-lispress.getArticleContent(route.query.article as string).then((text) => {
-  if (text.indexOf("---") == 0) {
-    text = text.replace(/---(.*\r?\n)*?---/, "");
+let title = useRoute().query.article as string;
+lispress.getArticleContent(title).then((text) => {
+  if (text.indexOf('---') == 0) {
+    text = text.replace(/---(.*\r?\n)*?---/, '');
   }
-  let element = document.createElement("div");
+  let element = document.createElement('div');
   element.innerHTML = marked(text);
-  element.querySelectorAll("pre>code").forEach(el  => {
+  element.querySelectorAll('pre>code').forEach((el) => {
     hljs.highlightElement(el as HTMLElement);
   });
-  article.value = element.innerHTML;
+  store.article = element;
 });
 </script>
 
 <template>
   <div id="article-content">
-    <div id="article" v-html="article"></div>
+    <div id="article" v-html="store.article.innerHTML"></div>
   </div>
 </template>
 

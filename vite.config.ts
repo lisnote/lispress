@@ -6,8 +6,8 @@ import { resolve } from 'path';
 export default defineConfig({
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src")
-    }
+      '@': resolve(__dirname, 'src'),
+    },
   },
   plugins: [vue()],
   server: {
@@ -19,9 +19,20 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: {
-        index: "index.html",
-        404: "404.html"
+        index: 'index.html',
+        404: '404.html',
       },
-    }
-  }
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            return id
+              .toString()
+              .split('node_modules/')[1]
+              .split('/')[0]
+              .toString();
+          }
+        },
+      },
+    },
+  },
 });

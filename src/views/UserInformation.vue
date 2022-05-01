@@ -20,9 +20,6 @@ let github = 'https://github.com/' + username;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  display: flex;
-  align-items: center;
   position: fixed;
   top: 60px;
   bottom: 0;

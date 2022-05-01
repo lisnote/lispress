@@ -4,6 +4,7 @@ import lispress from 'lispress';
 import { marked } from 'marked';
 import hljs from 'highlight.js/lib/common';
 import store from '../store';
+import { onUnmounted } from 'vue';
 
 let title = useRoute().query.article as string;
 lispress.getArticleContent(title).then((text) => {
@@ -17,6 +18,10 @@ lispress.getArticleContent(title).then((text) => {
   });
   store.article = element;
 });
+
+onUnmounted(() => {
+  store.article.innerHTML = '';
+});
 </script>
 
 <template>
@@ -26,7 +31,7 @@ lispress.getArticleContent(title).then((text) => {
 </template>
 
 <style lang="scss">
-@import "highlight.js/styles/default.css";
+@import 'highlight.js/styles/default.css';
 #article-content {
   position: relative;
   #article {

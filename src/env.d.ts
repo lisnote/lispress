@@ -12,3 +12,7 @@ declare module 'csstype' {
     '--level': number;
   }
 }
+
+interface Window {
+  lisconfig: { [key: string]: string };
+}

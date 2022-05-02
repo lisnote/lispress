@@ -14,7 +14,7 @@ export default defineConfig({
     port: 80,
     open: true,
   },
-  base: './',
+  base: '/',
   build: {
     sourcemap: true,
     rollupOptions: {

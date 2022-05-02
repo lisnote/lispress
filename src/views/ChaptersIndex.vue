@@ -7,9 +7,9 @@ let chapters = computed(() => {
 nextTick(() => {
   let chaptersIndex = document.querySelector('#chapters-index');
   chaptersIndex?.addEventListener('click', (e) => {
-    let id = e.target.dataset.id;
+    let id = (e.target as HTMLElement).dataset.id;
     if (id?.indexOf('#') == 0) {
-      document.documentElement.scrollTop = document.querySelector(id).offsetTop;
+      document.documentElement.scrollTop = (document.querySelector(id) as HTMLElement)?.offsetTop;
     }
   });
 });

@@ -1,12 +1,21 @@
 <script setup lang="ts">
-import lispress from "lispress";
-import { reactive, nextTick } from "vue";
+import lispress from 'lispress';
+import { reactive, nextTick } from 'vue';
+import { useRoute } from 'vue-router';
 
 // 读取数据
 let data: { titles: Array<string> } = reactive({ titles: [] });
-lispress.getArticlesTitle().then((titles) => {
-  data.titles = titles;
-});
+let route = useRoute();
+if (route.query.search) {
+  let keyworld = (route.query.search as string).split(' ');
+  lispress.getSearchArticlesTitle(keyworld).then((titles) => {
+    data.titles = titles;
+  });
+} else {
+  lispress.getArticlesTitle().then((titles) => {
+    data.titles = titles;
+  });
+}
 </script>
 
 <template>
@@ -40,7 +49,7 @@ lispress.getArticlesTitle().then((titles) => {
   &::after {
     display: block;
     padding-top: 56.25%;
-    content: "";
+    content: '';
   }
   > h1 {
     position: absolute;

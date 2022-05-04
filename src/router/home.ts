@@ -1,7 +1,8 @@
-const ArticleList = () => import('@/views/ArticleList.vue')
-const UserInformation = () => import('@/views/UserInformation.vue')
+const ArticleList = () => import('@/views/ArticleList.vue');
+const UserInformation = () => import('@/views/UserInformation.vue');
+import { RouteRecordRaw } from 'vue-router';
 
-const route = {
+const route: RouteRecordRaw = {
   path: '/',
   name: 'home',
   components: {

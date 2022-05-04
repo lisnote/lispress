@@ -1,12 +1,12 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import lispress from 'lispress';
+import pinia from './store';
 import router from './router';
-import { createPinia } from 'pinia';
 
 lispress.config(window.lisconfig);
 
 let app = createApp(App);
 app.use(router);
-app.use(createPinia());
+app.use(pinia);
 app.mount('#app');

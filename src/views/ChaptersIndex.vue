@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { mainStore } from '../store';
+import { PressStore } from '../store';
 import { computed, ComputedRef, nextTick } from 'vue';
 
-let store = mainStore();
+let pressStore = PressStore();
 let chapters = computed(function () {
   let nodes: NodeListOf<HTMLElement> =
-    store.article.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    pressStore.article.querySelectorAll('h1,h2,h3,h4,h5,h6');
   return Array.from(nodes);
 });
 nextTick(() => {

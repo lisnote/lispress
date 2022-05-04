@@ -1,9 +1,13 @@
-import { defineStore } from 'pinia';
+import { createPinia, defineStore } from 'pinia';
 
-export const mainStore = defineStore('main', {
+const pinia = createPinia();
+const PressStore = defineStore('main', {
   state: () => {
     return {
+      titles: [] as string[],
       article: document.createElement('div'),
     };
   },
 });
+
+export {pinia as default,PressStore}

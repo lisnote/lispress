@@ -3,10 +3,10 @@ import { useRoute } from 'vue-router';
 import lispress from 'lispress';
 import { marked } from 'marked';
 import hljs from 'highlight.js/lib/common';
-import { mainStore } from '../store';
+import { PressStore } from '../store';
 import { onUnmounted } from 'vue';
 
-let store = mainStore()
+let pressStore = PressStore()
 let title = useRoute().query.article as string;
 lispress.getArticleContent(title).then((text) => {
   if (text.indexOf('---') == 0) {
@@ -17,17 +17,17 @@ lispress.getArticleContent(title).then((text) => {
   element.querySelectorAll('pre>code').forEach((el) => {
     hljs.highlightElement(el as HTMLElement);
   });
-  store.article = element;
+  pressStore.article = element;
 });
 
 onUnmounted(() => {
-  store.article.innerHTML = '';
+  pressStore.article.innerHTML = '';
 });
 </script>
 
 <template>
   <div id="article-content">
-    <div id="article" v-html="store.article.innerHTML"></div>
+    <div id="article" v-html="pressStore.article.innerHTML"></div>
   </div>
 </template>
 

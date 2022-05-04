@@ -1,29 +1,24 @@
 <script setup lang="ts">
-import lispress from 'lispress';
-import { reactive, computed, nextTick } from 'vue';
+import { computed, nextTick } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { PressStore } from '../store';
 
-// 读取数据
-let store: { titles: Array<string> } = reactive({ titles: [] });
+// 基本数据
 let route = useRoute();
 let router = useRouter();
-if (route.query.search) {
-  let keyworld = (route.query.search as string).split(' ');
-  lispress.getSearchArticlesTitle(keyworld).then((titles) => {
-    store.titles = titles;
-  });
-} else {
-  lispress.getArticlesTitle().then((titles) => {
-    store.titles = titles;
-  });
-}
-
-// 翻页按钮逻辑
+let pressStore = PressStore();
 let page = computed(() => {
   return Number(route.query.page ?? 1);
 });
+
+// 文章列表处理
+let titles = computed(() => {
+  return pressStore.titles.slice((page.value - 1) * 10, page.value * 10);
+});
+
+// 翻页按钮逻辑
 function isShowNextPage() {
-  return page.value < Math.ceil(store.titles.length / 10);
+  return page.value < Math.ceil(pressStore.titles.length / 10);
 }
 nextTick(() => {
   let prePage = document.querySelector('#article-list .pre-page');
@@ -54,7 +49,7 @@ nextTick(() => {
 <template>
   <div id="article-list">
     <router-link
-      v-for="title in store.titles"
+      v-for="title in titles"
       :key="title"
       :to="`/articles/?article=${title}`"
     >

@@ -600,9 +600,9 @@ is-number@^7.0.0:
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
 lispress@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/lispress/-/lispress-1.1.2.tgz#500c799731201f534d0e9c038d93be474923bfd5"
-  integrity sha512-RHz0VbCZ7TtBusFtmXbMk8yvx6K4eYvxcZITif9Ip3tu77I93Y8jNzz1cP76GLWOaUbPTh3QdcJSMkbosIflpw==
+  version "1.1.3"
+  resolved "https://registry.npmjs.org/lispress/-/lispress-1.1.3.tgz#037d13c107cc7a77b07ff00c64b79a4ca1ac0d30"
+  integrity sha512-67FIOGxbBXkdCgnSvXVORIam/mG2YLxyOjH329NQz99trmWe2JLGS8LErr8jqq5Ex6XOZT9ZRwilXjVkmTNjng==
 
 magic-string@^0.25.7:
   version "0.25.9"

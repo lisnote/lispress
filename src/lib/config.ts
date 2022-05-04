@@ -41,7 +41,7 @@ function getUsername(): string {
   let index = location.host.indexOf('.github.io');
   if (index == -1) {
     console.error(
-      'Failed to obtain username,have you set the github.username in config.js?'
+      'Failed to obtain username,please set the username before using it.'
     );
     return 'lisnote';
   }

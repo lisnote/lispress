@@ -1,5 +1,9 @@
-import { reactive } from 'vue';
+import { defineStore } from 'pinia';
 
-export default reactive({
-  article: document.createElement('div'),
-} as { [key: string]: any });
+export const mainStore = defineStore('main', {
+  state() {
+    return {
+      article: document.createElement('div'),
+    };
+  },
+});

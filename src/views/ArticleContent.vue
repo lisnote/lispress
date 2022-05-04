@@ -3,9 +3,10 @@ import { useRoute } from 'vue-router';
 import lispress from 'lispress';
 import { marked } from 'marked';
 import hljs from 'highlight.js/lib/common';
-import store from '../store';
+import { mainStore } from '../store';
 import { onUnmounted } from 'vue';
 
+let store = mainStore()
 let title = useRoute().query.article as string;
 lispress.getArticleContent(title).then((text) => {
   if (text.indexOf('---') == 0) {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Navbar from './components/Navbar.vue';
+import NavBar from './components/NavBar.vue';
 import MainContent from './components/MainContent.vue';
 import BackToTop from './components/BackToTop.vue';
 </script>
@@ -7,7 +7,7 @@ import BackToTop from './components/BackToTop.vue';
 <template>
   <nav>
     <div>
-      <div><navbar /></div>
+      <div><nav-bar /></div>
     </div>
   </nav>
   <div>
@@ -26,17 +26,17 @@ body {
   display: flex;
   flex-direction: column;
   > nav {
-    height: 60px;
+    height: $navbar-height;
     > div {
       position: fixed;
       z-index: 1000;
       width: 100%;
-      height: 60px;
+      height: $navbar-height;
       display: flex;
       justify-content: center;
       > div {
         width: 1200px;
-        height: 60px;
+        height: $navbar-height;
         background: white;
         border-bottom: 1px solid #ddd;
       }

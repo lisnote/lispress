@@ -23,7 +23,7 @@ let github = 'https://github.com/' + username;
   position: fixed;
   top: 60px;
   bottom: 0;
-  width: 300px;
+  width: $sidebar-width;
   > div > p {
     text-align: center;
     > img {

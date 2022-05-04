@@ -4,6 +4,7 @@ import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
@@ -14,7 +15,13 @@ export default defineConfig({
     port: 80,
     open: true,
   },
-  base: '/',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/styles/GlobalVariables.scss";',
+      },
+    },
+  },
   build: {
     sourcemap: true,
     rollupOptions: {

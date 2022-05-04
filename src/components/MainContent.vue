@@ -39,7 +39,7 @@ nextTick(function () {
     min-width: 0;
   }
   #sidebar {
-    width: 300px;
+    width: $sidebar-width;
     background: white;
     @media screen and (max-width: 800px) {
       display: none;
@@ -52,7 +52,7 @@ nextTick(function () {
       border-left: 1px solid #ddd;
       overflow-y: auto;
       position: fixed;
-      width: 300px;
+      width: $sidebar-width;
       top: 60px;
       bottom: 0;
     }

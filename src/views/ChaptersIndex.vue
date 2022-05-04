@@ -39,7 +39,7 @@ nextTick(() => {
 #chapters-index {
   padding: 15px;
   > div {
-    border-left: calc(var(--level) * 1px) solid white;
+    margin-left: calc(var(--level) * 1px);
     > span {
       cursor: pointer;
     }

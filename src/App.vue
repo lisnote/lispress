@@ -17,6 +17,7 @@ import BackToTop from './components/BackToTop.vue';
 </template>
 
 <style lang="scss">
+@import '@/styles/Common.scss';
 // 结构样式
 body {
   margin: 0;
@@ -51,10 +52,5 @@ body {
       width: 1200px;
     }
   }
-}
-
-// 公共样式
-.show {
-  display: block !important;
 }
 </style>

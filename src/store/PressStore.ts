@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia';
 
-export default defineStore('press', {
+const PressStore = defineStore('press', {
   state: () => {
     return {
-      titles: [] as string[],
       article: document.createElement('div'),
     };
   },
 });
+
+export default PressStore;

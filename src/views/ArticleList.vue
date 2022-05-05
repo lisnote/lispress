@@ -1,48 +1,66 @@
 <script setup lang="ts">
-import { computed, nextTick } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-import { PressStore } from '../store';
+import { computed, watch, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import lispress from 'lispress';
 
 // 基本数据
 let route = useRoute();
-let router = useRouter();
-let pressStore = PressStore();
 let page = computed(() => {
   return Number(route.query.page ?? 1);
 });
-
-// 文章列表处理
-let titles = computed(() => {
-  return pressStore.titles.slice((page.value - 1) * 10, page.value * 10);
+let pageLength = 10;
+let allTitles = ref<string[]>([]);
+let titles = computed<string[]>(() => {
+  return allTitles.value.slice(
+    (page.value - 1) * pageLength,
+    page.value * pageLength,
+  );
 });
+let search = computed(() => {
+  return route.query.search ?? '';
+});
+
+// 文章更新
+refreshTitles();
+watch(search, () => {
+  allTitles.value = [];
+  refreshTitles();
+});
+function refreshTitles() {
+  if (search.value) {
+    lispress
+      .getSearchArticlesTitle((search.value as string).split(' '))
+      .then((titles) => {
+        allTitles.value = titles;
+      });
+  } else {
+    lispress.getArticlesTitle().then((titles) => {
+      allTitles.value = titles;
+    });
+  }
+}
 
 // 翻页按钮逻辑
 function isShowNextPage() {
-  return page.value < Math.ceil(pressStore.titles.length / 10);
+  return page.value < Math.ceil(allTitles.value.length / pageLength);
 }
-nextTick(() => {
-  let prePage = document.querySelector('#article-list .pre-page');
-  let nextPage = document.querySelector('#article-list .next-page');
-  prePage?.addEventListener('click', () => {
-    let query = {
-      ...route.query,
-    };
-    if (page.value == 2) {
-      Reflect.deleteProperty(query, 'page');
-    } else {
-      query.page = page.value - 1 + '';
-    }
-    router.push({
-      query,
-    });
-  });
-  nextPage?.addEventListener('click', () => {
-    router.push({
-      query: {
-        page: page.value + 1,
-      },
-    });
-  });
+let prePage = computed(() => {
+  let query = {
+    ...route.query,
+  };
+  if (page.value == 2) {
+    delete query.page;
+  } else {
+    query.page = page.value - 1 + '';
+  }
+  return { query };
+});
+let nextPage = computed(() => {
+  let query = {
+    ...route.query,
+  };
+  query.page = page.value + 1 + '';
+  return { query };
 });
 </script>
 
@@ -63,8 +81,12 @@ nextTick(() => {
       </div>
     </router-link>
     <div class="page-turn">
-      <button class="pre-page" v-show="page > 1">上一页</button>
-      <button class="next-page" v-show="isShowNextPage()">下一页</button>
+      <router-link :to="prePage" class="pre-page" v-show="page > 1"
+        >上一页</router-link
+      >
+      <router-link :to="nextPage" class="next-page" v-show="isShowNextPage()"
+        >下一页</router-link
+      >
     </div>
   </div>
 </template>
@@ -95,10 +117,10 @@ nextTick(() => {
   .page-turn {
     text-align: center;
     padding-bottom: 15px;
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
+    a {
+      margin: 15px;
+      text-decoration: none;
+      color: black;
     }
   }
 }

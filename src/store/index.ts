@@ -1,13 +1,7 @@
-import { createPinia, defineStore } from 'pinia';
+import { createPinia } from 'pinia';
+import PressStore from './PressStore';
+import CommonStore from './CommonStore';
 
 const pinia = createPinia();
-const PressStore = defineStore('main', {
-  state: () => {
-    return {
-      titles: [] as string[],
-      article: document.createElement('div'),
-    };
-  },
-});
 
-export {pinia as default,PressStore}
+export { pinia as default, PressStore, CommonStore };

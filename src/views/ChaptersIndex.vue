@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PressStore } from '../store';
-import { computed, ComputedRef, nextTick } from 'vue';
+import { computed, nextTick } from 'vue';
 
 let pressStore = PressStore();
 let chapters = computed(function () {
@@ -13,9 +13,10 @@ nextTick(() => {
   chaptersIndex?.addEventListener('click', (e) => {
     let id = (e.target as HTMLElement).dataset.id;
     if (id?.indexOf('#') == 0) {
-      document.documentElement.scrollTop = (
-        document.querySelector(id) as HTMLElement
-      )?.offsetTop;
+      window.scrollTo({
+        top: document.querySelector<HTMLElement>(id)?.offsetTop,
+        behavior: 'smooth',
+      });
     }
   });
 });

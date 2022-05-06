@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import lispress from 'lispress';
-import { marked } from 'marked';
+import { marked } from '../util/marked.esm';
 import hljs from 'highlight.js/lib/common';
 import { PressStore } from '../store';
 import { nextTick, onUnmounted } from 'vue';

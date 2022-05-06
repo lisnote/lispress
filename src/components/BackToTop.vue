@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { nextTick } from "vue";
+import { nextTick } from 'vue';
 
 nextTick(() => {
-  let backToTop = document.querySelector("#back-to-top") as HTMLElement;
-  backToTop.addEventListener("click", () => {
-    document.documentElement.scrollTop = 0;
+  let backToTop = document.querySelector('#back-to-top') as HTMLElement;
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   });
-  window.addEventListener("scroll", function () {
+  window.addEventListener('scroll', function () {
     if (window.scrollY > 100) {
-      backToTop.style.display = "block";
+      backToTop.style.display = 'block';
     } else {
-      backToTop.style.display = "none";
+      backToTop.style.display = 'none';
     }
   });
 });

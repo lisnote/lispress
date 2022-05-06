@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
+// const babel = require('@rollup/plugin-babel').default;
+import babel from '@rollup/plugin-babel';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +12,15 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    {
+      ...babel({
+        presets: [['@babel/preset-env', { loose: true }]],
+      }),
+      apply: 'build',
+    },
+  ],
   server: {
     host: '0.0.0.0',
     port: 80,

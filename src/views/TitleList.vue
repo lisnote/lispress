@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed, watch, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import lispress from 'lispress';
@@ -65,21 +65,27 @@ let nextPage = computed(() => {
 </script>
 
 <template>
-  <div id="article-list">
-    <router-link
-      v-for="title in titles"
-      :key="title"
-      :to="`/articles/?article=${title}`"
-    >
-      <div
-        class="article-cart"
-        :style="{
-          'background-image': `url(https://lisnote.github.io/articles/assets/${title}/background.jpg)`,
-        }"
+  <div id="title-list">
+    <div class="article-cart">
+      <transition-group
+        appear
+        enter-active-class="fadeInUp"
+        leave-active-class="fadeOutUp"
       >
-        <h1>{{ title }}</h1>
-      </div>
-    </router-link>
+        <div v-for="title in titles" :key="title">
+          <router-link :to="`/articles/?article=${title}`">
+            <div
+              :style="{
+                'background-image': `url(https://lisnote.github.io/articles/assets/${title}/background.jpg)`,
+              }"
+            >
+              <h1>{{ title }}</h1>
+            </div>
+          </router-link>
+        </div>
+      </transition-group>
+    </div>
+
     <div class="page-turn">
       <router-link :to="prePage" class="pre-page" v-show="page > 1"
         >上一页</router-link
@@ -92,26 +98,34 @@ let nextPage = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-#article-list {
+@import '@/styles/animate.scss';
+
+#title-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   .article-cart {
-    margin: 1.5rem;
-    background: #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    // z-index: -1;
-    background-size: cover;
-    &::after {
-      display: block;
-      padding-top: 56.25%;
-      content: '';
-    }
-    > h1 {
-      position: absolute;
-      margin: 0;
-      padding: 0 10px;
-      width: 100%;
-      background: rgba(245, 245, 245, 0.85);
+    flex: 1 1;
+    > div > a > div {
+      margin: 1.5rem;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      // z-index: -1;
+      background-size: cover;
+      &::after {
+        display: block;
+        padding-top: 56.25%;
+        content: '';
+      }
+      h1 {
+        position: absolute;
+        margin: 0;
+        padding: 0 10px;
+        width: 100%;
+        background: rgba(245, 245, 245, 0.85);
+      }
     }
   }
   .page-turn {

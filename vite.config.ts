@@ -40,6 +40,10 @@ export default defineConfig({
               .split('/')[0]
               .toString();
           }
+          console.log("test")
+          if (id.includes("/util/marked.esm.js")){
+            return "marked"
+          }
         },
       },
     },

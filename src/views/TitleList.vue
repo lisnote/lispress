@@ -79,7 +79,9 @@ let nextPage = computed(() => {
                 'background-image': `url(https://lisnote.github.io/articles/assets/${title}/background.jpg)`,
               }"
             >
-              <h1>{{ title }}</h1>
+              <div>
+                <h1>{{ title }}</h1>
+              </div>
             </div>
           </router-link>
         </div>
@@ -119,12 +121,17 @@ let nextPage = computed(() => {
         padding-top: 56.25%;
         content: '';
       }
-      h1 {
+      div {
         position: absolute;
-        margin: 0;
-        padding: 0 10px;
         width: 100%;
         background: rgba(245, 245, 245, 0.85);
+        padding-left: 10px;
+        h1 {
+          margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis; //溢出用省略号显示
+          white-space: nowrap; //溢出不换行
+        }
       }
     }
   }

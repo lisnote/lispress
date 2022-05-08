@@ -6,6 +6,7 @@ import hljs from 'highlight.js/lib/common';
 import { PressStore } from '../store';
 import { nextTick, onUnmounted } from 'vue';
 import Gitalk from 'gitalk';
+import PoweredBy from './PoweredBy.vue';
 
 let pressStore = PressStore();
 let title = useRoute().query.article as string;
@@ -45,6 +46,7 @@ onUnmounted(() => {
       <div id="article" v-html="pressStore.article.innerHTML"></div>
       <hr />
       <div id="gitalk-container"></div>
+      <powered-by />
     </div>
   </div>
 </template>
@@ -91,7 +93,7 @@ onUnmounted(() => {
       padding: 10px 0;
     }
   }
-  .gt-meta{
+  .gt-meta {
     z-index: 0;
   }
 }

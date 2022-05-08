@@ -2,6 +2,7 @@
 import { computed, watch, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import lispress from 'lispress';
+import PoweredBy from './PoweredBy.vue';
 
 // 基本数据
 let route = useRoute();
@@ -96,6 +97,7 @@ let nextPage = computed(() => {
         >下一页</router-link
       >
     </div>
+    <powered-by />
   </div>
 </template>
 

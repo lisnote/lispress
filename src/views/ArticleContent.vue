@@ -51,7 +51,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 @import 'highlight.js/styles/default.css';
-@import "gitalk/dist/gitalk.css";
+@import 'gitalk/dist/gitalk.css';
 
 #article-content {
   position: relative;
@@ -90,6 +90,9 @@ onUnmounted(() => {
     #gitalk-container {
       padding: 10px 0;
     }
+  }
+  .gt-meta{
+    z-index: 0;
   }
 }
 </style>

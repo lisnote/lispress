@@ -20,6 +20,7 @@ declare interface Config {
   article?: string;
   background?: string;
   avatar?: string;
+  [key: string]: string;
 }
 
 // data container
@@ -41,7 +42,7 @@ function getUsername(): string {
   let index = location.host.indexOf('.github.io');
   if (index == -1) {
     console.error(
-      'Failed to obtain username,please set the username before using it.'
+      'Failed to obtain username,please set the username before using it.',
     );
     return 'lisnote';
   }

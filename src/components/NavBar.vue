@@ -1,10 +1,27 @@
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+let router = useRouter();
+let search = ref('');
+function searchArticle() {
+  router.push({ query: { search: search.value } });
+}
+</script>
+
 <template>
   <div id="nav-bar">
     <router-link to="/" id="logo"><div>Lispress</div></router-link>
     <div>
-      <form method="get" action="/">
-        <input type="text" placeholder="Search anything" name="search" />
-      </form>
+      <div>
+        <input
+          type="text"
+          placeholder="Search anything"
+          name="search"
+          v-model="search"
+          @keypress.enter="searchArticle"
+        />
+      </div>
       <div id="sidebar-toggle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +52,7 @@
   padding: 10px;
   > div {
     display: flex;
-    > form {
+    > div {
       margin: 0 20px 0 10px;
       > input {
         height: 30px;

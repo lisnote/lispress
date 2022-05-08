@@ -647,10 +647,10 @@ is-weakref@^1.0.2:
   resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
-lispress@^1.1.3:
-  version "1.1.4"
-  resolved "https://registry.npmjs.org/lispress/-/lispress-1.1.4.tgz#0d1291d02c9fb2b1e743392b7f7afa8afc07d78e"
-  integrity sha512-3Dl8MXh23Adk2JpASdsUGgvSGEQRcO176xoOQFwjSp49F3dhgR6BzBL3oBBGxcvMxD+0DStKr4Rh5QFrfStElg==
+lispress@1.1.5:
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/lispress/-/lispress-1.1.5.tgz#56c4e97d985568c069d86be0aa204a85db26da33"
+  integrity sha512-T7tz/aPSY9ck3uQDLKZ5pfd4qYH3GmHNiH1MoVtkLtIzeznRJ7qngcLSYK77SNXjA6bE0eHI8HxuvtDasbdszw==
 
 loose-envify@^1.0.0, loose-envify@^1.4.0:
   version "1.4.0"

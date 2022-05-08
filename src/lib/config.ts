@@ -20,7 +20,7 @@ declare interface Config {
   article?: string;
   background?: string;
   avatar?: string;
-  [key: string]: string;
+  [key: string]: any;
 }
 
 // data container

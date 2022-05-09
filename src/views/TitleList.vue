@@ -77,7 +77,7 @@ let nextPage = computed(() => {
           <router-link :to="`/articles/?article=${title}`">
             <div
               :style="{
-                'background-image': `url(https://lisnote.github.io/articles/assets/${title}/background.jpg)`,
+                'background-image': `url(https://${lispress.config().username}.github.io/articles/assets/${title}/background.jpg)`,
               }"
             >
               <div>

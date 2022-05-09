@@ -47,6 +47,7 @@ nextTick(function () {
       top: 60px;
       right: 0;
       bottom: 0px;
+      z-index: 1000;
     }
     > div {
       border-left: 1px solid #ddd;

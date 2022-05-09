@@ -102,8 +102,5 @@ onUnmounted(() => {
       padding: 10px 0;
     }
   }
-  .gt-meta {
-    z-index: 0;
-  }
 }
 </style>

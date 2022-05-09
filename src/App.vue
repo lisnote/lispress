@@ -32,12 +32,11 @@ body {
       position: fixed;
       z-index: 1000;
       width: 100%;
-      height: $navbar-height;
       display: flex;
       justify-content: center;
       > div {
         width: 1200px;
-        height: $navbar-height;
+        height: $navbar-height - 1;
         background: white;
         border-bottom: 1px solid #ddd;
       }

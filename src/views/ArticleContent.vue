@@ -10,15 +10,19 @@ import PoweredBy from './PoweredBy.vue';
 
 let pressStore = PressStore();
 let title = useRoute().query.article as string;
+
+marked.setOptions({
+  highlight: function (code, lang) {
+    return hljs.highlightAuto(code).value;
+  },
+  baseUrl: `https://${lispress.config().username}.github.io/articles/`,
+});
 lispress.getArticleContent(title).then((text) => {
   if (text.indexOf('---') == 0) {
     text = text.replace(/---(.*\r?\n)*?---/, '');
   }
   let element = document.createElement('div');
-  element.innerHTML = marked(text);
-  element.querySelectorAll('pre>code').forEach((el) => {
-    hljs.highlightElement(el as HTMLElement);
-  });
+  element.innerHTML = marked.parse(text);
   pressStore.article = element;
 });
 
@@ -87,6 +91,11 @@ onUnmounted(() => {
       }
       img {
         max-width: 100%;
+      }
+      pre {
+        background: #f3f3f3;
+        padding: 1em;
+        color: #444;
       }
     }
     #gitalk-container {

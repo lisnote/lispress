@@ -4,9 +4,11 @@ import lispress from 'lispress';
 import { marked } from '../util/marked.esm';
 import hljs from 'highlight.js/lib/common';
 import { PressStore } from '../store';
-import { nextTick, onUnmounted } from 'vue';
-import Gitalk from 'gitalk';
+import { onUnmounted, defineAsyncComponent } from 'vue';
 import PoweredBy from './PoweredBy.vue';
+const ArticleComments = defineAsyncComponent(
+  () => import('./ArticleComments.vue'),
+);
 
 let pressStore = PressStore();
 let title = useRoute().query.article as string;
@@ -26,19 +28,6 @@ lispress.getArticleContent(title).then((text) => {
   pressStore.article = element;
 });
 
-let config = lispress.config();
-const gitalk = new Gitalk({
-  clientID: config.clientID + '',
-  clientSecret: config.clientSecret + '',
-  repo: config.username + '.github.io',
-  owner: config.username as string,
-  admin: [config.username as string],
-  id: title.substring(0, 49),
-  distractionFreeMode: false,
-});
-nextTick(() => {
-  gitalk.render('gitalk-container');
-});
 onUnmounted(() => {
   pressStore.article.innerHTML = '';
 });
@@ -49,7 +38,7 @@ onUnmounted(() => {
     <div>
       <div id="article" v-html="pressStore.article.innerHTML"></div>
       <hr />
-      <div id="gitalk-container"></div>
+      <article-comments />
       <powered-by />
     </div>
   </div>
@@ -97,9 +86,6 @@ onUnmounted(() => {
         padding: 1em;
         color: #444;
       }
-    }
-    #gitalk-container {
-      padding: 10px 0;
     }
   }
 }

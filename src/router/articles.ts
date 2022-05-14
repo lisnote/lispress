@@ -1,13 +1,12 @@
-const ArticleContent = () => import('@/views/ArticleContent.vue');
-const ChaptersIndex = () => import('@/views/ChaptersIndex.vue');
 import { RouteRecordRaw } from 'vue-router';
+import asyncImport from '../util/asyncImport';
 
 const articles: RouteRecordRaw = {
   path: '/articles',
   name: 'articles',
   components: {
-    exhibitionArea: ArticleContent,
-    sidebar: ChaptersIndex,
+    exhibitionArea: asyncImport('ArticleContent'),
+    sidebar: asyncImport('ChaptersIndex'),
   },
 };
 export default articles;

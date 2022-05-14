@@ -38,7 +38,14 @@ onUnmounted(() => {
     <div>
       <div id="article" v-html="pressStore.article.innerHTML"></div>
       <hr />
-      <article-comments />
+      <suspense>
+        <template #default>
+          <article-comments />
+        </template>
+        <template #fallback>
+          <div>Loading Comments...</div>
+        </template>
+      </suspense>
       <powered-by />
     </div>
   </div>
@@ -46,7 +53,6 @@ onUnmounted(() => {
 
 <style lang="scss">
 @import 'highlight.js/styles/default.css';
-@import 'gitalk/dist/gitalk.css';
 
 #article-content {
   position: relative;

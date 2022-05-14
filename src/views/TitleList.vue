@@ -77,7 +77,9 @@ let nextPage = computed(() => {
           <router-link :to="`/articles/?article=${title}`">
             <div
               :style="{
-                'background-image': `url(https://${lispress.config().username}.github.io/articles/assets/${title}/background.jpg)`,
+                'background-image': `url(https://${
+                  lispress.config().username
+                }.github.io/articles/assets/${title}/background.jpg)`,
               }"
             >
               <div>
@@ -116,7 +118,12 @@ let nextPage = computed(() => {
       border-radius: 10px;
       overflow: hidden;
       position: relative;
-      background-size: cover;
+      background-size: 100%;
+      background-position: center;
+      transition: all 0.5s;
+      &:hover {
+        background-size: 130%;
+      }
       &::after {
         display: block;
         padding-top: 56.25%;

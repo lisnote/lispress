@@ -29,17 +29,17 @@
 }
 
 .loading-dot::after {
-  content: '';
+  content: '...';
   animation: loading-dot 2s infinite;
 }
 @keyframes loading-dot {
   25% {
-    content: '.';
+    content: '';
   }
   50% {
-    content: '..';
+    content: '.';
   }
   75% {
-    content: '...';
+    content: '..';
   }
 }

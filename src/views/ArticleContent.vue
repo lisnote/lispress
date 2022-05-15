@@ -50,6 +50,7 @@ lispress.getArticleContent(title).then((text) => {
 
 <style lang="scss">
 @import 'highlight.js/styles/default.css';
+@import '@/styles/animate.scss';
 
 #article-content {
   position: relative;
@@ -90,22 +91,6 @@ lispress.getArticleContent(title).then((text) => {
         color: #444;
       }
     }
-  }
-}
-
-.loading-dot::after {
-  content: '';
-  animation: loading-dot 2s infinite;
-}
-@keyframes loading-dot {
-  25% {
-    content: '.';
-  }
-  50% {
-    content: '..';
-  }
-  75% {
-    content: '...';
   }
 }
 </style>

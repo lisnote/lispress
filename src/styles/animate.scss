@@ -27,3 +27,19 @@
     position: absolute;
   }
 }
+
+.loading-dot::after {
+  content: '';
+  animation: loading-dot 2s infinite;
+}
+@keyframes loading-dot {
+  25% {
+    content: '.';
+  }
+  50% {
+    content: '..';
+  }
+  75% {
+    content: '...';
+  }
+}

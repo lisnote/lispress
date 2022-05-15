@@ -92,12 +92,34 @@ let nextPage = computed(() => {
     </div>
 
     <div class="page-turn">
-      <router-link :to="prePage" class="pre-page" v-show="page > 1"
-        >上一页</router-link
-      >
-      <router-link :to="nextPage" class="next-page" v-show="isShowNextPage()"
-        >下一页</router-link
-      >
+      <router-link :to="prePage" class="pre-page" v-show="page > 1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          fill="currentColor"
+          class="bi bi-caret-left-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"
+          />
+        </svg>
+      </router-link>
+      <router-link :to="nextPage" class="next-page" v-show="isShowNextPage()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          fill="currentColor"
+          class="bi bi-caret-right-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+          />
+        </svg>
+      </router-link>
     </div>
     <powered-by />
   </div>
@@ -149,11 +171,15 @@ let nextPage = computed(() => {
   }
   .page-turn {
     text-align: center;
-    padding-bottom: 15px;
-    a {
-      margin: 15px;
-      text-decoration: none;
-      color: black;
+    a > svg {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      color: gray;
+      transition: all 0.5s;
+      &:hover {
+        color: black;
+      }
     }
   }
 }

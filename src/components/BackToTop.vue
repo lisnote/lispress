@@ -22,15 +22,14 @@ nextTick(() => {
 <template>
   <div id="back-to-top">
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="100%"
       height="100%"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 16 16"
     >
       <path
-        d="M17.6569 16.2427L19.0711 14.8285L12.0001 7.75739L4.92896 14.8285L6.34317 16.2427L12.0001 10.5858L17.6569 16.2427Z"
-        fill="currentColor"
+        d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"
       />
     </svg>
   </div>
@@ -44,8 +43,11 @@ nextTick(() => {
   right: 50px;
   width: 50px;
   height: 50px;
-  background: whitesmoke;
-  border-radius: 10px;
   cursor: pointer;
+  color: gray;
+  transition: all 0.5s;
+  &:hover {
+    color: black;
+  }
 }
 </style>

@@ -118,13 +118,12 @@ let nextPage = computed(() => {
       border-radius: 10px;
       overflow: hidden;
       position: relative;
-      background-size: 100%;
+      background-size: cover;
       background-position: center;
       transition: all 0.5s;
       box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
         0 1px 5px 0 rgb(0 0 0 / 12%);
       &:hover {
-        background-size: 130%;
         box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%),
           0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
       }
@@ -141,6 +140,7 @@ let nextPage = computed(() => {
         h1 {
           margin: 0;
           overflow: hidden;
+          color: black;
           text-overflow: ellipsis; //溢出用省略号显示
           white-space: nowrap; //溢出不换行
         }

@@ -67,7 +67,7 @@ let nextPage = computed(() => {
 
 <template>
   <div id="title-list">
-    <div class="article-cart">
+    <div class="article-card">
       <transition-group
         appear
         enter-active-class="fadeInUp"
@@ -110,7 +110,7 @@ let nextPage = computed(() => {
   display: flex;
   flex-direction: column;
   height: 100%;
-  .article-cart {
+  .article-card {
     flex: 1 1;
     > div > a > div {
       margin: 1.5rem;
@@ -121,8 +121,12 @@ let nextPage = computed(() => {
       background-size: 100%;
       background-position: center;
       transition: all 0.5s;
+      box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+        0 1px 5px 0 rgb(0 0 0 / 12%);
       &:hover {
         background-size: 130%;
+        box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%),
+          0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
       }
       &::after {
         display: block;

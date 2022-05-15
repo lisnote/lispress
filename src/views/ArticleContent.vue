@@ -11,7 +11,7 @@ const ArticleComments = defineAsyncComponent(
 );
 
 let pressStore = PressStore();
-pressStore.article.innerHTML = 'Loading Article...';
+pressStore.article.innerHTML = '<h3>Loading Article...</h3>';
 let title = useRoute().query.article as string;
 
 marked.setOptions({
@@ -28,10 +28,6 @@ lispress.getArticleContent(title).then((text) => {
   element.innerHTML = marked.parse(text);
   pressStore.article = element;
 });
-
-onUnmounted(() => {
-  pressStore.article.innerHTML = 'Loading Article...';
-});
 </script>
 
 <template>
@@ -44,7 +40,7 @@ onUnmounted(() => {
           <article-comments />
         </template>
         <template #fallback>
-          <div>Loading Comments...</div>
+          <h3>Loading Comments...</h3>
         </template>
       </suspense>
       <powered-by />

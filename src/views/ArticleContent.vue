@@ -11,7 +11,7 @@ const ArticleComments = defineAsyncComponent(
 );
 
 let pressStore = PressStore();
-pressStore.article.innerHTML = '<h3>Loading Article...</h3>';
+pressStore.article.innerHTML = '<h3 class="loading-dot">Loading Article</h3>';
 let title = useRoute().query.article as string;
 
 marked.setOptions({
@@ -40,7 +40,7 @@ lispress.getArticleContent(title).then((text) => {
           <article-comments />
         </template>
         <template #fallback>
-          <h3>Loading Comments...</h3>
+          <h3 class="loading-dot">Loading Comments</h3>
         </template>
       </suspense>
       <powered-by />
@@ -90,6 +90,22 @@ lispress.getArticleContent(title).then((text) => {
         color: #444;
       }
     }
+  }
+}
+
+.loading-dot::after {
+  content: '';
+  animation: loading-dot 2s infinite;
+}
+@keyframes loading-dot {
+  25% {
+    content: '.';
+  }
+  50% {
+    content: '..';
+  }
+  75% {
+    content: '...';
   }
 }
 </style>

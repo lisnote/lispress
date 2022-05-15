@@ -136,13 +136,13 @@ let nextPage = computed(() => {
         position: absolute;
         width: 100%;
         background: rgba(245, 245, 245, 0.85);
-        padding-left: 10px;
         h1 {
+          padding: 0 10px 5px 10px;
           margin: 0;
           overflow: hidden;
           color: black;
-          text-overflow: ellipsis; //溢出用省略号显示
-          white-space: nowrap; //溢出不换行
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
     }

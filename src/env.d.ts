@@ -9,7 +9,7 @@ declare module '*.vue' {
 
 declare module 'csstype' {
   interface Properties {
-    '--level': number;
+    [key: string]: string;
   }
 }
 

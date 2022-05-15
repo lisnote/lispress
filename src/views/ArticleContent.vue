@@ -11,6 +11,7 @@ const ArticleComments = defineAsyncComponent(
 );
 
 let pressStore = PressStore();
+pressStore.article.innerHTML = 'Loading Article...';
 let title = useRoute().query.article as string;
 
 marked.setOptions({
@@ -29,7 +30,7 @@ lispress.getArticleContent(title).then((text) => {
 });
 
 onUnmounted(() => {
-  pressStore.article.innerHTML = '';
+  pressStore.article.innerHTML = 'Loading Article...';
 });
 </script>
 

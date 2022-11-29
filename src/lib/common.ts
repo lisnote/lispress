@@ -47,13 +47,13 @@ function getDateMap(): Promise<DateMap> {
                 .replace(/-| |:/g, ''),
             );
           } catch {
+            console.error("Fail to sort by date, API rate limit exceeded.");
             dateMap[element.name] = 0;
           }
         });
         return dateMap;
-      } catch(e) {
-        console.error("Sort failed, API rate limit exceeded.")
-        return {};
+      } catch (e) {
+        throw new Error('Sort failed, API rate limit exceeded.');
       }
     });
 }
